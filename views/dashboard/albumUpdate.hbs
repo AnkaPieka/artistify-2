@@ -1,18 +1,22 @@
-<form method="post" action="/dashboard/album/create" class="form" enctype="multipart/form-data">
-    <h1 class="title">create album</h1>
+<form method="post" action="/dashboard/album/update" class="form" enctype="multipart/form-data">
+    <h1 class="title">update album</h1>
     <label for="title" class="label">title</label>
-    <input class="input" type="text" id="title" name="title" value="test album">
+    <input class="input" type="text" id="title" name="title" value="{{album.title}}">
 
     <label for="select-artist">artist</label>
     <select id="select-artist" name="artist" class="input">
-       {{#each artists }}
+       {{!-- {{#each artist }}
+       {{#if (artist.name == album.artist.name)}}
        <option selected="selected" value="{{this._id}}"> {{this.name}} </option>
-       {{/each}}
+       {{else}}
+       <option value="{{this._id}}"> {{this.name}} </option>
+       {{/if}}
+       {{/each}} --}}
     </select>
 
     <label for="select-label">label</label>
     <select id="select-label" name="label" class="input">
-     {{#each labels }}
+     {{#each label }}
        <option value="{{this._id}}"> {{this.name}} </option>
        {{/each}}
     </select>
